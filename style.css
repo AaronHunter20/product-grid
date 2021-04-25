@@ -1,0 +1,63 @@
+/*----- Reset -----*//*
+#region*/
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+/*#endregion*/
+/*----- Base -----*//*
+#region*/
+    body {
+        /* Variables */
+        --padding: 0.5em;
+
+        /* Alignment */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        /* Box */
+        width: 100vw;
+        height: 100vh;
+    }
+/*#endregion*/
+/*----- Grid -----*//*
+#region*/
+    #grid {
+        /* Alignment */
+        display: grid;
+        grid-auto-flow: row;
+        grid-template-columns: auto 2fr 3fr auto auto;
+        
+
+        row-gap: var(--padding);
+        column-gap: var(--padding);
+
+        justify-items: center;
+        align-items: center;
+
+        /* Box */
+        width: 500px;
+        padding: var(--padding);
+
+        /* Font */
+        text-align: center;
+
+        /* Color */
+
+        /* Style */
+    }
+    #grid:nth-child(2) {
+        background-color: grey;
+    }
+/*#endregion*/
+/*----- Items -----*//*
+#region*/
+    .pad-Item {
+        padding: var(--padding);
+    }
+    .title {
+        font-size: 1em;
+    }
+/*#endregion*/
