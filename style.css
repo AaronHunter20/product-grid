@@ -31,8 +31,6 @@
 #region*/
     table {
         border-spacing: 0;
-        /* width: 500px; */
-        height: auto;
     }
     /* Table header */
     thead {
@@ -41,6 +39,7 @@
     th {
         color: white;
         padding: 2vmin;
+        text-align: center;
     }
 
     /* Table row */
@@ -50,28 +49,26 @@
 
     /* Table Data */
     td:first-child {
+        width: 96px;
+        height: 80px;
+        
         align-content: center;
         background-size: contain;
         background-position: center center;
         background-repeat: no-repeat;
     }
-    input {
-        font-size: 1rem;
+    .description {
+        font-size: 0.6em;
+        width: 250px;
     }
-    textarea {
-        resize: none;
-        font-size: 0.8rem;
-        overflow:visible;
+    .padding {
+        padding: 0 25px;
     }
-    textarea, input {
-        padding: 0.5em;
-        margin: 1em;
-        border-radius: 3px;
-        border: solid gray 1px;
+    .delete-image {
+        width: 1em;
     }
-    td.name {
-        font-weight: 900;
-        font-size: 1rem;
+    .name {
+
     }
 
     /* Button */
