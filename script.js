@@ -1,10 +1,11 @@
+const addButton = document.querySelector('tbody');
 const table = {
     body: document.querySelector('tbody')
 }
 let itemNum = 0;
 class Tableitem {
     constructor(config) {
-        this.image = config.image;
+        this.image = config.image ;
         this.name = config.name;
         this.des = config.description;
         this.qty = config.qty;
@@ -13,19 +14,38 @@ class Tableitem {
         this.node = document.createElement('tr');
     }
 
-    createHTML() {
-        itemNum ++;
+    displayNormal() {
         this.node.innerHTML = `
-        <td style="background-image: url(./Images/item_${itemNum}.jpg)" ></td>
+        <td style="background-image: url(./Images/item_1.jpg)"></td>
         <td class="padding name">${this.name}</td>
         <td class="padding description">${this.des}</td>
         <td class="padding qty">${this.qty}</td>
         <td class="padding price">${this.price}</td>
-        <td class="padding">
+        <td class="padding delete-button">
             <image class="delete-image" src="./Images/draw.svg">
         </td>
         `
         table.body.appendChild(this.node);
+    }
+    displayInputs() {
+        this.node.innerHTML = `
+        <td style="background-image: url(./Images/item_1.jpg)"></td>
+        <td class="padding name">
+            <input value="${this.name}">
+        </td>
+        <td class="padding description">
+            <textarea name="" id="" cols="20" rows="2"></textarea>
+        </td>
+        <td class="padding qty">
+            <input value="${this.name}">
+        </td>
+        <td class="padding price">
+            <input value="${this.name}">
+        </td>
+        <td class="padding">
+            <image class="delete-image" src="./Images/draw.svg">
+        </td>
+        `
     }
     
     removeHTML() {
@@ -72,9 +92,15 @@ Tableitem.list = [
 
 // For every table item...
 for (let i = 0; i < Tableitem.list.length; i++) {
-    Tableitem.list[i].createHTML();
+    Tableitem.list[i].displayNormal();
+    const editButton = document.querySelectorAll('.delete-button');
+    
+    editButton[i].addEventListener('click', () => {
+        Tableitem.list[i].displayInputs();
+    }); 
 }
 
+// Listen for when the "add item" button is clicked
+addButton.addEventListener('click', () => {
 
-
-console.log();
+});
