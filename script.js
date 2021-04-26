@@ -16,7 +16,7 @@ class Tableitem {
 
     displayNormal() {
         this.node.innerHTML = `
-        <td style="background-image: url(./Images/item_1.jpg)"></td>
+        <td style="background-image: url(${this.image})"></td>
         <td class="padding name">${this.name}</td>
         <td class="padding description">${this.des}</td>
         <td class="padding qty">${this.qty}</td>
@@ -29,7 +29,7 @@ class Tableitem {
     }
     displayInputs() {
         this.node.innerHTML = `
-        <td style="background-image: url(${this.image}"></td>
+        <td style="background-image: url(${this.image})"></td>
         <td class="padding name">
             <input value="${this.name}">
         </td>
