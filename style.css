@@ -4,60 +4,104 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
     }
 /*#endregion*/
-/*----- Base -----*//*
+/*----- Body -----*//*
 #region*/
-    body {
-        /* Variables */
-        --padding: 0.5em;
+   body {
+       /* Variables */
+       
+       /* Alignment */
+       display: flex;
 
-        /* Alignment */
-        display: flex;
-        justify-content: center;
-        align-items: center;
+       justify-content: center;
+       align-items: center;
 
-        /* Box */
-        width: 100vw;
-        height: 100vh;
-    }
+       flex-direction: column;
+
+       /* Box */
+       width: 100vw;
+       height: 100vh;
+       
+   } 
 /*#endregion*/
-/*----- Grid -----*//*
+
+/*----- Table -----*//*
 #region*/
-    #grid {
-        /* Alignment */
-        display: grid;
-        grid-auto-flow: row;
-        grid-template-columns: auto 2fr 3fr auto auto;
-        
+    table {
+        border-spacing: 0;
+        /* width: 500px; */
+        height: auto;
+    }
+    /* Table header */
+    thead {
+        background-color: rgb(0, 0, 0);
+    }
+    th {
+        color: white;
+        padding: 2vmin;
+    }
 
-        row-gap: var(--padding);
-        column-gap: var(--padding);
+    /* Table row */
+    tr:nth-child(even) {
+        background-color: rgb(240, 240, 240);
+    }
 
-        justify-items: center;
-        align-items: center;
+    /* Table Data */
+    td:first-child {
+        align-content: center;
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+    input {
+        font-size: 1rem;
+    }
+    textarea {
+        resize: none;
+        font-size: 0.8rem;
+        overflow:visible;
+    }
+    textarea, input {
+        padding: 0.5em;
+        margin: 1em;
+        border-radius: 3px;
+        border: solid gray 1px;
+    }
+    td.name {
+        font-weight: 900;
+        font-size: 1rem;
+    }
 
-        /* Box */
-        width: 500px;
-        padding: var(--padding);
+    /* Button */
+    td:last-child:hover {
+        background-color: rgb(235, 255, 235);
+    }
+    td:last-child:active {
+        background-color: rgb(220, 255, 220);
+    }
+    .remove-button {
+        padding: 0;
+        width: 1em;
+    }
 
-        /* Font */
+
+/*#endregion*/
+/*----- Add Item -----*//*
+#region*/
+    #add-item {
+        user-select: none;
+        margin-top: 10px;
+        padding: 4vmin;
         text-align: center;
-
-        /* Color */
-
-        /* Style */
+        background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23333' stroke-width='4' stroke-dasharray='6%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+        background-color: rgb(255, 255, 255);
     }
-    #grid:nth-child(2) {
-        background-color: grey;
+    #add-item:hover {
+        background-color: rgb(235, 255, 235);
     }
-/*#endregion*/
-/*----- Items -----*//*
-#region*/
-    .pad-Item {
-        padding: var(--padding);
-    }
-    .title {
-        font-size: 1em;
+    #add-item:active {
+        background-color: rgb(220, 255, 220);
     }
 /*#endregion*/
