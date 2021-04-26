@@ -29,7 +29,7 @@ class Tableitem {
     }
     displayInputs() {
         this.node.innerHTML = `
-        <td style="background-image: url(./Images/item_1.jpg)"></td>
+        <td style="background-image: url(${this.image}"></td>
         <td class="padding name">
             <input value="${this.name}">
         </td>
